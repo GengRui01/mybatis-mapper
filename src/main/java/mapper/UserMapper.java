@@ -17,4 +17,12 @@ public interface UserMapper {
      */
     @Select("SELECT username FROM user WHERE id = #{id}")
     String selectUsernameById(Integer id);
+
+    /**
+     * 通过用户id查询用户年龄
+     *
+     * @param id 用户id
+     * @return 用户年龄
+     */
+    Integer selectUserAgeById(Integer id);
 }

@@ -28,6 +28,9 @@ public class UserTest {
         // 调用注解的SQL
         String username = mapper.selectUsernameById(1);
         System.out.println("username: " + username);
+        // 调用XML的SQL
+        Integer age = mapper.selectUserAgeById(1);
+        System.out.println("age: " + age);
         // 关闭会话
         session.close();
     }
