@@ -4,7 +4,13 @@
     <select id="selectUserAgeById" resultType="java.lang.Integer">
         SELECT age FROM user WHERE id = #{id}
     </select>
-    <select id="selectUserById" resultType="entity.User">
+    <select id="selectUserById" resultMap="userMap">
         SELECT * FROM user WHERE id = #{id}
     </select>
+    <resultMap id="userMap" type="entity.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="age" column="age"/>
+        <result property="score" column="score"/>
+    </resultMap>
 </mapper>
