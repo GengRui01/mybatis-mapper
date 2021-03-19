@@ -1,3 +1,4 @@
+import entity.User;
 import mapper.UserMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -31,6 +32,9 @@ public class UserTest {
         // 调用XML的SQL
         Integer age = mapper.selectUserAgeById(1);
         System.out.println("age: " + age);
+        // 调用通过用户id查询用户信息的方法
+        User user = mapper.selectUserById(1);
+        System.out.println(user);
         // 关闭会话
         session.close();
     }

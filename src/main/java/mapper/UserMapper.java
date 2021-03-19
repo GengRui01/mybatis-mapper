@@ -1,5 +1,6 @@
 package mapper;
 
+import entity.User;
 import org.apache.ibatis.annotations.Select;
 
 /**
@@ -25,4 +26,12 @@ public interface UserMapper {
      * @return 用户年龄
      */
     Integer selectUserAgeById(Integer id);
+
+    /**
+     * 通过用户id查询用户信息
+     *
+     * @param id
+     * @return
+     */
+    User selectUserById(Integer id);
 }
